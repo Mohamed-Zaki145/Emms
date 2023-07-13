@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--My Custom CSS Files-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/viewsubject.css">
+    <!--Bootstrap 5-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/f0525f147f.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+    <link rel="icon" type="image/x-icon" href="logos/FCAILogo-removebg-preview.png">
+    <title>موضوع #</title>
+</head>
+<body>
+    
+ <!--First Section Header Start-->
+ <section class="firstheader">
+  <div class="container d-flex justify-content-between">
+         <div>
+          <a href="logged_index.html"><img src="logos/FCAILogo-removebg-preview.png" class="fade-in " height="60" width="60" alt=""></a>
+          <span class="fcai fade-in">كلية الحاسبــــات و الذكـــاء الاصطناعى</span>
+         </div> 
+            <ul class="icons fade-in">
+            <a class="icon" href="logged_index.html"><i class="fa-solid fa-house"></i></a>
+            <a class="icon" href="profile.html"><i class="fa-regular fa-user"></i></a>
+            <a class="icon" href="archive.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a  id="logout" onclick="logout()" class="btn logoutt">تسجيل الخروج</a>
+        </ul> 
+  </div>
+  <br>
+</section>
+<!--First Section Header End-->
+<!--Navbar Start-->
+<div class="NavBar">
+  <div class="container">
+  <nav class="navbar navbar-expand-lg ">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse fade-in" id="navbarNavAltMarkup">
+          <div class="navbar-nav mx-auto" >
+            <a class="nav-link" href="createmeeting.html">الاجتماعات</a>
+            <a class="nav-link" href="initiatornotification.html">الإشعارات</a>
+            <a class="nav-link" href="archive.html">أرشيف</a>
+            <a class="nav-link" href="CreateSubject.html">إنشاء مواضيع</a>
+          </div>
+         </div>
+  </div>
+    </nav>
+</div>
+<!--Navbar End-->
+    <!--Create Sub Start-->
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <br>
+                    <label style="font-size: x-large;">موضوع :</label>
+                    <br>
+                    <label style="font-size: x-large;">اجتماع :</label>
+                    <br>
+                    <label style="font-size: x-large;">التاريخ :</label>
+                    <br>
+                    <br>
+                    <div class="linkat">
+                        <label>المرفقات :</label>
+                        <a href="#">www.clickhereonthelink.com</a>
+                    </div>
+                    <br>
+                    <textarea name="Decision" placeholder="قرار" id="" cols="100" rows="7" disabled></textarea>
+                    <br>
+                    <br>
+                    <textarea name="Subject" placeholder="موضوع" id="" cols="173.5" rows="14" disabled></textarea>
+                </div>
+                <!-- <div class="col-md-4 mt-5">
+                    <div style="border: 2px solid black; height: 275px; overflow: auto;"><br>
+                        <div class="container" id="attendeecontainer">
+                            <h3>الحضور</h3>
+            
+                        </div>
+                    </div>
+                    <br>
+                </div> -->
+            </div>
+        </div>
+        <div>
+            <a class="btn mt-4 px-5 py-2  selectAttBtn" href="archive.html"> رجوع </a>
+        </div>
+    </div>
+    <!--Create Sub End-->
+    <br><br><br><br>
+          <!--Footer Copyright Start-->
+          <div class="lastsection">
+            <center>
+                <div class="textlastsection">
+                    <h6> © 2023 جميع الحقوق محفوظة  لدي FCAI </h6>
+                </div>
+            </center>
+        </div>
+          <!--Footer Copyright End-->
+
+    <!--JS Files-->
+    <script src="js/logout.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/viewsubject.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/flipcard.js"></script>
+</body>
+</html>
