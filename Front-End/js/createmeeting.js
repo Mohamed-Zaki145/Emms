@@ -175,11 +175,35 @@ function getplaces() {
     })
 }
 
+function getmeetingtype() {
+  var token = localStorage.getItem('token');
+  fetch(`http://127.0.0.1:8000/api/meeting-initiator/Meetingtype`, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
+    .then(response => {
+      // Check if the response is successful
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      // Parse the response as JSON and return another Promise
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      document.getElementById("meeting").innerHTML = "";
+      for (meeting of data) {
+        let content = `<option value= ${meeting.id} >${meeting.name}</option>`
+        document.getElementById("meeting").innerHTML += content;
+      }
+    })
+}
 function upcommingmeeting() {
   var ID = localStorage.getItem('notifiy');
   var token = localStorage.getItem('token');
   console.log(token)
-  console.log(ID);
   fetch(`http://127.0.0.1:8000/api/meeting-initiator/upcoming/${ID}`, {
     method: 'GET',
     headers: {
@@ -222,9 +246,6 @@ function upcommingmeeting() {
       document.getElementById("upcomming").innerHTML += content;
       // }
     })
-    .catch(error => {
-      console.error('Error in Notification:', error);
-    });
 }
 
 function showinvited() {
@@ -260,16 +281,12 @@ function showinvited() {
         document.getElementById("invited").innerHTML += content;
       }
     })
-    .catch(error => {
-      // Handle any errors that occurred during the request
-      console.error('Error:', error);
-    });
 }
 function showdoctors() {
   var token = localStorage.getItem('token');
   var Id = localStorage.getItem('notifiy')
   console.log(Id)
-  fetch(`http://127.0.0.1:8000/api/meeting-initiator/DoctorsandInitiator`, {
+  fetch(`http://127.0.0.1:8000/api/meeting-initiator/Adminstrationsdoctors/${Id}`, {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer ' + token
@@ -297,22 +314,19 @@ function showdoctors() {
         <hr>`
         document.getElementById("doctorgroup").innerHTML += content;
       }
-    })
-    .catch(error => {
-      // Handle any errors that occurred during the request
-      console.error('Error:', error);
-    });
+    }) 
 }
 
 function createmeeting() {
   var ID = localStorage.getItem('notifiy');
   var token = localStorage.getItem('token');
-  meetingt = document.getElementById('textinput').value;
+  selectElement = document.getElementById('meeting');
+  meetingty= selectElement.value;
   selectElement = document.getElementById('Loc');
   placename = selectElement.value;
   meetingdate = document.getElementById('datepicker').value;
   meetingtime = document.getElementById('start').value;
-  console.log(meetingt)
+  console.log(meetingty)
   console.log(placename)
   console.log(meetingdate)
   console.log(meetingtime)
@@ -342,7 +356,7 @@ function createmeeting() {
       "initiatorid": ID,
       "location": placename,
       "date": meetingdate,
-      "meetingtype": meetingt,
+      "meetingtypeid": meetingty,
       "startedtime": meetingtime
     }),
     headers: {

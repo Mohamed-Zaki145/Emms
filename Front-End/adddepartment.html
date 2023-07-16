@@ -8,17 +8,17 @@
     <!--My Custom CSS Files-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="css/adminaddlocation.css">
+    <link rel="stylesheet" href="css/addmeetingtype.css">
     <!--Bootstrap 5-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--Font Awesome-->
     <!-- <script src="https://kit.fontawesome.com/f0525f147f.js" crossorigin="anonymous"></script> -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
     <link rel="icon" type="image/x-icon" href="logos/FCAILogo-removebg-preview.png">
-    <title>اضافة مكان</title>
+    <title>اضافة قسم</title>
     <script>
         window.onload = function () {
-            getplaces();
+            getdepartments();
         };
     </script>
 </head>
@@ -73,27 +73,26 @@
                 
                 <div>
                     <br>
-                    <h4>إضافه مكان</h4>
+                    <h4>إضافه قسم</h4>
                     <br>
-                    <input class="form-control inputform" type="text" placeholder="اسم المكان" aria-label="default input example" id="textinput">
-                    <button onclick="addplace()" type="button" class="btn btn-primary addbtn" data-bs-toggle="modal" data-bs-target="#exampleModal22">
+                    <input class="form-control inputform" type="text" placeholder="اسم القسم" aria-label="default input example" id="textinput">
+                    <button onclick="adddept()" type="button" class="btn btn-primary addbtn" data-bs-toggle="modal" data-bs-target="#exampleModal22">
                         إضافه
                     </button>
 
                     <!---->
                     <br>
-                    <h4 class="h4-2">حذف مكان</h4>
+                    <h4 class="h4-2">حذف قسم</h4>
                     <br>
                     <div class="card-body">
                         <form action="/action_page.php" class="" id="">
-                            <select onclick="fun()" class="input4" name="Location" id="Location2">
-                            <option value="Location1">قاعة السمينار</option>
-
+                            <select onclick="fun()" class="input4" name="type" id="dept">
+                                <option value="meeting1">نظم المعلومات</option>
                             </select>
                         </form>
                     </div>
                     <button type="click" id="butt" class="button33" data-bs-toggle="modal" data-bs-target="#exampleModal7">
-                        حذف مكان
+                        حذف القسم 
                     </button>
 
                 </div>
@@ -117,7 +116,7 @@
 
     <!--JS Files-->
     <script src="js/logout.js"></script>
-    <script src="js/adminaddlocation.js"></script>
+    <script src="js/adddepartment.js"></script>
     <!-- <script src="js/controllercreatesub.js"></script> -->
     <script src="js/animation.js"></script>
     <script src="js/flipcard.js"></script>

@@ -172,16 +172,74 @@ function getnotifications() {
 
       document.getElementById("notificationtable").innerHTML = "";
       for (notification of data) {
-        let content = `
-                <div class="card cardu">
-                  <div class="card-body">
-                    <blockquote class="blockquote mb-0"  style="font-family: 'Amiri', serif;">
-                    <p>يدعوكم  ${notification.initiator.name} لحضور اجتماع ${notification.meeing.meetingtype} ,وذلك في تمام الساعه/ ${notification.meeing.startedtime} ,الموافق/ ${notification.meeing.date} ,في/ ${notification.meeing.location}</p>
-                  </blockquote>
+        let mtype;
+        var IDD=notification.meeing.meetingtypeid
+        fetch(`http://127.0.0.1:8000/api/doctor/Meetingtype/${IDD}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer ' + token
+          }
+        })
+          .then(response => {
+            // Check if the response is successful
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            // Parse the response as JSON and return another Promise
+            return response.json();
+          })
+          .then(data => {
+            // Process the retrieved data
+            console.log(data);
+            mtype = data.name
+            let content = `
+              <div class="card cardu">
+              <div class="card-body" class="forPlaces">
+                <blockquote class="blockquote mb-0" style="font-family: 'Amiri', serif;">
+                <p>يدعوكم  ${notification.initiator.name} لحضور اجتماع ${mtype} ,وذلك في تمام الساعه/
+                ${notification.meeing.startedtime} ,الموافق/ ${notification.meeing.date} ,في/ ${notification.meeing.location}</p>
+                </blockquote>
+                <hr>
+                <div class="col-5">
+                  <div>
+                    <button type="button" class="agenda" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                      محضر الاجتماع 
+                    </button>
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">الموضوع</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                              style="margin-left: 0;"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="container" id="">
+
+                              <p class="card-text" style="text-align:right;">نوع الموضوع: </p>
+                              <textarea placeholder="الموضوع" cols="57" rows="7" disabled>  </textarea>
+
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="accept">
+                      الموافقه
+                    </button>
+                    <button type="submit" class="reject">
+                      الاعتذار عن الحضور
+                    </button>
                   </div>
                 </div>
-                `
-        document.getElementById("notificationtable").innerHTML += content;
+              </div>
+            </div>  `
+            document.getElementById("notificationtable").innerHTML += content;
+          })
       }
     })
     .catch(error => {
@@ -211,32 +269,51 @@ function upcommingmeeting() {
     .then(data => {
       // Process the retrieved data
       console.log(data);
-
       document.getElementById("upcomming").innerHTML = "";
-      // for (me of data) {
-        let content = `
-        <div class="left1Layer1">
-          <label class="h2-1">
-            الاجتماعات القادمة
-          </label>
-          <label class="h3-1">
-            نوع الاجتماع: ${data.meetingtype}
-          </label>
-          <label class="h3-2">
-            المكان: ${data.location}
-          </label>
-          <label class="h3-3">
-            التاريخ: ${data.date}
-          </label>
-          <br>
-          <label class="h3-4">
-            الساعه: ${data.startedtime}
-          </label>
-        </div>`
-        document.getElementById("upcomming").innerHTML += content;
-      // }
+      var IDD=data.meetingtypeid
+        fetch(`http://127.0.0.1:8000/api/doctor/Meetingtype/${IDD}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer ' + token
+          }
+        })
+          .then(response => {
+            // Check if the response is successful
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            // Parse the response as JSON and return another Promise
+            return response.json();
+          })
+          .then(data1 => {
+            // Process the retrieved data
+            console.log(data1);
+            mtype = data1.name
+            let content = `
+              <div class="left1Layer1">
+                <label class="h2-1">
+                  الاجتماعات القادمة
+                </label>
+                <label class="h3-1">
+                  نوع الاجتماع: ${mtype}
+                </label>
+                <label class="h3-2">
+                  المكان: ${data.location}
+                </label>
+                <label class="h3-3">
+                  التاريخ: ${data.date}
+                </label>
+                <br>
+                <label class="h3-4">
+                  الساعه: ${data.startedtime}
+                </label>
+              </div>`
+            document.getElementById("upcomming").innerHTML += content;})
     })
-    .catch(error => {
-      console.error('Error in Notification:', error);
-    });
+}
+function acceptRequest(){
+
+}
+function rejectRequest(){
+  
 }

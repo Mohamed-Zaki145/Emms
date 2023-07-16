@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +20,7 @@
     window.onload = function () {
       upcommingmeeting();
       getplaces();
+      getmeetingtype();
     };
   </script>
 </head>
@@ -70,6 +72,7 @@
 
           <div class="col-10 left1" id="upcomming">
             <div class="left1Layer1">
+
               <label class="h2-1">
                 الاجتماعات القادمة
               </label>
@@ -82,7 +85,6 @@
               <label class="h3-3">
                 التاريخ:
               </label>
-              <br>
               <label class="h3-4">
                 الساعه:
               </label>
@@ -116,17 +118,17 @@
                         </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
 
-                <div class="col-5">
+                <!-- <div class="col-5">
                   <div>
-                    <!-- <button type="button" class="btn btn-light button12" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-light button12" data-bs-toggle="modal"
                       data-bs-target="#exampleModal3">
                       الحضور
-                    </button> -->
+                    </button>
 
-                    <!-- Modal -->
                     <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
                       aria-hidden="true">
                       <div class="modal-dialog modal-dialog-scrollable">
@@ -148,7 +150,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
 
             </div>
@@ -159,7 +161,7 @@
 
               <form action="/action_page.php">
                 <label class="meetingtitle">نوع الاجتماع</label>
-                <select name="meeting" id="meeting" class="selectmeeting">
+                <select name="meeting"  class="selectmeeting">
                   <option value="meeting1">مجلس الاقسام</option>
                   <option value="meeting2">مجلس الكليه</option>
                   <option value="meeting3">علوم البيئه</option>
@@ -192,9 +194,14 @@
 
               <h2 class="h2-5">إنشاء اجتماع جديد</h2>
 
-              <input class="form-control input1 inputs" type="text" placeholder="نوع الاجتماع"
-                aria-label="default input example" id="textinput">
+              <form action="/action_page.php">
+                <select class="meetingtypedropdown inputs" id="meeting">
+                  <option value="meeting1">مجلس الاقسام</option>
+                </select>
+              </form>
+
               <div class="clearr"></div>
+
               <form action="/action_page.php" class="">
                 <select class="inputs input2" name="Location" id="Loc">
                   <option value="قاعة السمينار">قاعة السمينار</option>
@@ -216,7 +223,8 @@
 
               <!--Select Doctors-->
               <div>
-                <button type="button" onclick="showdoctors()" class="btn selectDocBtn" data-bs-toggle="modal" data-bs-target="#exampleModal7">
+                <button type="button" onclick="showdoctors()" class="btn selectDocBtn" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal7">
                   اختر الحاضرين
                 </button>
 
@@ -231,16 +239,6 @@
                       </div>
                       <div class="modal-body" id="selcetattendee">
 
-                        <!-- <form action="/action_page.php" class="">
-                          <select class="inputs input6" name="meetingtype" id="meetingtype">
-                            <option value="">نظم المعلومات</option>
-                            <option value="">تكنولوجيا المعلومات</option>
-                            <option value="">علوم الحاسب</option>
-                            <option value="">الذكاء الاصطناعى</option>
-                            <option value="">دعم القرار</option>
-                          </select>
-                        </form>
-                        <br> -->
                         <br>
                         <!--users-->
                         <div id="doctorgroup">
@@ -275,7 +273,7 @@
                     <div class="modal-content">
                       <div class="modal-header header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel6">اختر المدعوبن</h1>
-                        <button type="button"  class="btn-close" style="margin-left: 0;" data-bs-dismiss="modal"
+                        <button type="button" class="btn-close" style="margin-left: 0;" data-bs-dismiss="modal"
                           aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
@@ -287,8 +285,7 @@
                             <br>
                             <label class="header" for="Doc2">المسمى الوظيفي: ${invite.jobdescription}</label>
                             <div class="clearr"></div>
-                            <input class="chbox"  id="Doc2" type="checkbox" name="Doc2"
-                              value="Doc2">
+                            <input class="chbox" id="Doc2" type="checkbox" name="Doc2" value="Doc2">
                           </form>
                           <hr>
                         </div>
@@ -296,7 +293,7 @@
 
                       </div>
                       <div class="modal-footer">
-                        <button type="button"  class="btn btn-primary" data-bs-dismiss="modal">تم</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">تم</button>
                       </div>
                     </div>
                   </div>

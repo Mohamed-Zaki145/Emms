@@ -111,7 +111,7 @@ form.addEventListener('submit', function (event) {
         method: 'POST',
         body: JSON.stringify({
             "email": email,
-            "password": pass,
+            "password": pass
 
         }),
         headers: {

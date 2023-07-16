@@ -1,6 +1,32 @@
+function showinitiators(){
+    var token = localStorage.getItem('token');
+    fetch(`http://127.0.0.1:8000/api/admin/initiators`, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    })
+        .then(response => {
+            // Check if the response is successful
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            // Parse the response as JSON and return another Promise
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            document.getElementById("init").innerHTML = "";
+            for (doctor of data) {
+                let content = `<option value=${doctor.id}> ${doctor.name}</option>`
+                document.getElementById("init").innerHTML += content;
+            }
+        })
+}
 function showdoctors() {
     var token = localStorage.getItem('token');
-    fetch(`http://127.0.0.1:8000/api/meeting-initiator/DoctorsandInitiator`, {
+    var Id = localStorage.getItem('initid')
+    fetch(`http://127.0.0.1:8000/api/admin/DoctorsandInitiator/${Id}`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + token
@@ -50,12 +76,13 @@ function showdoctors() {
 
 function checkedinvited() {
     var token = localStorage.getItem('token');
-    var nn = localStorage.getItem('notifiy')
-    console.log(nn)
-    fetch('http://127.0.0.1:8000/api/meeting-initiator/CreateGroup', {
+    selectElement = document.getElementById('init');
+    initid = selectElement.value;
+    console.log(initid)
+    fetch('http://127.0.0.1:8000/api/admin/CreateGroup', {
         method: 'POST',
         body: JSON.stringify({
-            "initiatorid": nn,
+            "initiatorid": initid,
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
@@ -76,7 +103,7 @@ function checkedinvited() {
     })
     console.log(checkedCheckboxes)
 
-    fetch(`http://127.0.0.1:8000/api/meeting-initiator/addGroupUsers/${nn}`, {
+    fetch(`http://127.0.0.1:8000/api/admin/addGroupUsers/${initid}`, {
         method: 'POST',
         body: JSON.stringify(checkedCheckboxes),
         headers: {
@@ -113,8 +140,9 @@ function deletFunction() {
 function deletegroup() {
 
     var token = localStorage.getItem('token');
-    var IX = localStorage.getItem('notifiy')
-    const url = `http://127.0.0.1:8000/api/meeting-initiator/deletegroup/${IX}`;
+    selectElement = document.getElementById('init');
+    var IX = selectElement.value;
+    const url = `http://127.0.0.1:8000/api/admin/deletegroup/${IX}`;
     fetch(url, {
         method: 'DELETE',
         headers: {
@@ -125,7 +153,6 @@ function deletegroup() {
         .then(response => {
             if (response.ok) {
                 // User successfully deleted
-                console.log(`User with ID ${invitedId} deleted.`);
                 alert("تم حذف الممجموعه بنجاج")
                 // window.location.reload()
             } else {
@@ -142,8 +169,9 @@ function deletegroup() {
 
 function fun() {
     var token = localStorage.getItem('token');
-    var IX = localStorage.getItem('notifiy')
-    url = `http://127.0.0.1:8000/api/meeting-initiator/GroupUser/${IX}`
+    var IX = localStorage.getItem('initid');
+    console.log(IX)
+    url = `http://127.0.0.1:8000/api/admin/GroupUser/${IX}`
     fetch(url, {
         method: 'GET',
         headers: {
@@ -207,8 +235,8 @@ function deletemember(userId) {
 
 }
 function deleteUser(userId) {
-    var IN = localStorage.getItem('notifiy')
-    const url = `http://127.0.0.1:8000/api/meeting-initiator/deleted/${IN}/${userId}`; // Replace with your API endpoint URL
+    var IN = localStorage.getItem('initid');
+    const url = `http://127.0.0.1:8000/api/admin/deleted/${IN}/${userId}`; // Replace with your API endpoint URL
     var token = localStorage.getItem('token');
     fetch(url, {
         method: 'DELETE',
@@ -232,4 +260,11 @@ function deleteUser(userId) {
             // Handle network error
             console.error('Network error occurred.', error);
         });
+}
+
+function onselection(){
+    selectElement = document.getElementById('init');
+    initid = selectElement.value;
+    localStorage.setItem('initid',initid)
+    console.log(initid+" -------------------")
 }

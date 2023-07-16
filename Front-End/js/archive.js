@@ -55,7 +55,7 @@ function getsearch() {
                 </div>
                 <br>
                 <!-- Button trigger modal -->
-                <a href="viewsubject.html" class="btn viewbtn">
+                <a href="viewsubject.html" onclick="getsubjectdata(${subject.id})" class="btn viewbtn">
                   عرض
                 </a>
               </div><br>`
@@ -70,34 +70,6 @@ function getsearch() {
   })
 }
 
+function getsubjectdata(){
 
-// < !DOCTYPE html >
-//   <html>
-//     <head>
-//       <title>Search Result Highlighting</title>
-//       <style>
-//         .highlight {
-//           background - color: yellow;
-//         font-weight: bold;
-//     }
-//       </style>
-//       <script>
-//         function highlightSearchResults() {
-//       var searchTerm = document.getElementById('search-term').value;
-//         var content = document.getElementById('content').innerHTML;
-//         var highlightedContent = content.replace(
-//         new RegExp(searchTerm, 'gi'),
-//         '<span class="highlight">$&</span>'
-//         );
-//         document.getElementById('content').innerHTML = highlightedContent;
-//     }</script>
-//     </head>
-//     <body>
-//       <h1>Search Result Highlighting:</h1>
-//       <input type="text" id="search-term" placeholder="Enter search term">
-//         <button onclick="highlightSearchResults()">Search</button>
-//         <div id="content">
-//           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ligula lacus, varius id enim non, lacinia tristique tortor. Sed at eros rhoncus, bibendum tortor quis, sagittis nunc. Integer sed varius orci, sit amet lobortis felis. Pellentesque tincidunt sem quis ultrices facilisis. Sed nec enim eget nunc efficitur venenatis. Donec lobortis mi quis pharetra consectetur. Donec consequat, massa ac euismod tempor, sem massa ultrices nisi, sed sagittis tellus velit nec ex.
-//         </div>
-//     </body>
-//   </html>
+}

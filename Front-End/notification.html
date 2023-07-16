@@ -35,7 +35,7 @@
       </div>
       <ul class="icons fade-in">
         <a class="icon" href="profile.html"><i class="fa-regular fa-user"></i></a>
-        <a  id="logout" onclick="logout()" class="btn logoutt">تسجيل الخروج</a>
+        <a id="logout" onclick="logout()" class="btn logoutt">تسجيل الخروج</a>
       </ul>
     </div>
     <br>
@@ -62,24 +62,24 @@
   <section class="firstheader">
     <div class="container-fluid text-center meetingDetails">
 
-      <div class="row" >
+      <div class="row">
         <div class="col-4 left">
           <div class="col-10 left1" id="upcomming">
-            <div class="left1Layer1" >
+            <div class="left1Layer1">
               <label class="h2-1">
                 الاجتماعات القادمة
               </label>
               <label class="h3-1">
-                نوع الاجتماع: 
+                نوع الاجتماع:
               </label>
               <label class="h3-2">
-                المكان: 
+                المكان:
               </label>
               <label class="h3-3">
-                التاريخ: 
+                التاريخ:
               </label>
               <label class="h3-4">
-                الساعه: 
+                الساعه:
               </label>
             </div>
           </div>
@@ -100,7 +100,7 @@
 
               <div class="row row2">
                 <h2 class="h2-3">
-                  الاجتماع السابق<span class="space2"></span> <a class="btn btn-light button2"
+                  محضر الاجتماع السابق<span class="space2"></span> <a class="btn btn-light button2"
                     href="doctorpreviousmeeting.html" role="button"> عرض </a>
                 </h2>
               </div>
@@ -120,19 +120,69 @@
               <div class="card bg-transparent parent border-0">
                 <!--Row1-->
                 <div class="row row-cols-1 row-cols-md-1 g-2 notification" id="notificationtable">
+
                   <div class="card cardu">
-                    <div class="card-body">
+                    <div class="card-body" class="forPlaces">
                       <blockquote class="blockquote mb-0" hidden style="font-family: 'Amiri', serif;">
-                        <p>يدعوكم دكتور/ ${notification.initiator.name} لحضور اجتماع ${notification.meeing.meetingtype} ,وذلك في تمام الساعه/ ${notification.meeing.startedtime} ,الموافق/ ${notification.meeing.date} ,في/ ${notification.meeing.location}</p>
+                        <p class="sizecontroller">يدعوكم دكتور/ ${notification.initiator.name} لحضور اجتماع
+                          ${notification.meeing.meetingtype}
+                          ,وذلك في تمام الساعه/ ${notification.meeing.startedtime} ,الموافق/ ${notification.meeing.date}
+                          ,في/ ${notification.meeing.location} </p>
                       </blockquote>
+
+                      <hr>
+
+                      <div class="col-5">
+                        <div>
+                          <button type="button" class="agenda" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            محضر الاجتماع 
+                          </button>
+
+                          <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">الموضوع</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                    style="margin-left: 0;"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="container" id="">
+
+                                    <p class="card-text" style="text-align:right;">نوع الموضوع: </p>
+                                    <textarea placeholder="الموضوع" cols="57" rows="7" disabled>  </textarea>
+
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <button type="submit" class="accept">
+                            الموافقه
+                          </button>
+
+                          <button type="submit" class="reject">
+                            الاعتذار عن الحضور
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
             </div>
+
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </section>
   <br>
@@ -156,4 +206,5 @@
   <script src="js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

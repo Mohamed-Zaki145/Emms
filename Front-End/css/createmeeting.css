@@ -1,45 +1,55 @@
-.left{
+.left {
     box-sizing: border-box !important;
     padding-right: 4% !important;
     height: 80vh;
 }
-.right{
+
+.right {
     box-sizing: border-box !important;
     padding-left: 5% !important;
     height: 80vh;
 }
-.left1{
+
+.left1 {
     background-color: rgb(68, 128, 197);
     width: 90%;
-    height: 50%;
+    height: 60%;
     border-radius: 17px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 9%;
     margin-top: 3%;
 }
-.left2{
+
+.left2 {
     background-color: rgb(36, 58, 84);
     width: 90%;
-    height: 40%;
+    height: 37%;
     border-radius: 17px;
+    margin-top: 3%;
+    margin-bottom: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.meetingDetails{
+
+.meetingDetails {
     height: 80vh;
 }
+
 /*---------------------------------------------*/
-.left1Layer1{
+.left1Layer1 {
     position: relative;
     border-radius: 17px;
     width: 90%;
+    max-width: 90%;
+    max-height: 90%;
     height: 90%;
     background-color: rgba(240, 248, 255, 0.455);
+    overflow-y: auto;
 }
-.selectmeeting{
+
+.selectmeeting {
     position: absolute;
     top: 17%;
     right: 17%;
@@ -49,109 +59,121 @@
     width: 65% !important;
     height: 15% !important;
 }
-.meetingtitle{
+
+.meetingtitle {
     color: white;
     position: absolute;
     top: 1.5%;
     right: 17%;
     font-size: larger;
 }
-.h2-1{
+
+.h2-1 {
     position: absolute;
     right: 5%;
     top: 0%;
-    color:white;
+    color: white;
     font-size: 170%;
 }
-.h3-1{
+
+.h3-1 {
     position: absolute;
     right: 5%;
     top: 15%;
-    color:white;
+    color: white;
     font-size: 20px;
 }
-.h3-2{
+
+.h3-2 {
     position: absolute;
     right: 5%;
     top: 30%;
-    color:white;
+    color: white;
     font-size: 20px;
 }
-.h3-3{
+
+.h3-3 {
     position: absolute;
     right: 5%;
     top: 45%;
-    color:white;
+    color: white;
     font-size: 20px;
-    padding-bottom: 2%;
 }
-.h3-4{
+
+.h3-4 {
     position: absolute;
     right: 5%;
     top: 60%;
-    color:white;
+    color: white;
     font-size: 20px;
-    padding-bottom: 2%;
 }
-.button11{
+
+.button11 {
     position: absolute;
-    right: 12% ;
+    right: 12%;
     bottom: 3%;
-    color: rgb(36, 58, 84) !important; 
+    color: rgb(36, 58, 84) !important;
     font-size: 80% !important;
     width: max-content !important;
     height: fit-content !important;
 }
-.button12{
+
+.button12 {
     position: absolute;
-    right: 57% ;
+    right: 57%;
     bottom: 3%;
-    color: rgb(36, 58, 84) !important; 
+    color: rgb(36, 58, 84) !important;
     font-size: 80% !important;
     width: fit-content !important;
     height: fit-content !important;
 }
 
 /*---------------------------------------------*/
-.left2Layer2{
+.left2Layer2 {
     position: relative;
     border-radius: 17px;
     width: 90%;
     height: 90%;
     background-color: rgba(240, 248, 255, 0.455);
 }
-.space1{
-    
+
+.space1 {
+
     margin-inline: 2%;
 }
-.space2{
-    
-    margin-inline: 1.1% ;
+
+.space2 {
+
+    margin-inline: 1.1%;
 }
-.button2{
+
+.button2 {
     position: absolute;
-    color: rgb(36, 58, 84) !important; 
+    color: rgb(36, 58, 84) !important;
     font-size: 70% !important;
     width: fit-content !important;
     height: fit-content !important;
 }
-.h2-2{
+
+.h2-2 {
     position: absolute;
     top: 45%;
     left: 10%;
-    color:white;
-    font-size: 135%;
-    display: inline-block ;
-}
-.h2-3{
-    position: absolute;
-    left: 10%;
-    top: 75%;
-    color:white;
+    color: white;
     font-size: 135%;
     display: inline-block;
 }
-.right1{
+
+.h2-3 {
+    position: absolute;
+    left: 10%;
+    top: 75%;
+    color: white;
+    font-size: 135%;
+    display: inline-block;
+}
+
+.right1 {
     position: relative;
     background-color: rgb(32, 71, 118);
     width: 100%;
@@ -159,20 +181,21 @@
     margin: 0.7%;
     border-radius: 17px;
 }
-.group{
+
+.group {
     background-color: rgb(255, 255, 255);
     position: absolute;
     right: 5%;
     width: 35%;
     height: 7% !important;
-    border: 0px ;
+    border: 0px;
     border-radius: 8px;
     margin-top: 7%;
     padding: 5px;
     position: relative;
 }
 
-.chbox1{
+.chbox1 {
     position: absolute;
     top: 35%;
     left: 10%;
@@ -180,62 +203,80 @@
     float: left;
 }
 
-.row2{
+.row2 {
     margin-top: 4.5% !important;
 }
-.h2-4{
+
+.h2-4 {
     position: relative;
-    color:white;
+    color: white;
     font-size: 170%;
     display: inline-block;
 }
+
 /*right------------------*/
-.h2-5{
-    color:white;
+.h2-5 {
+    color: white;
     font-size: 170%;
     padding-top: 2%;
     padding-bottom: 3%;
     margin-right: 3%;
     text-align: right;
 }
+
 /*----------------------*/
-.formbody{
+.formbody {
     position: relative;
 }
-.header{
+
+.header {
     float: right;
 }
-.clearr{
+
+.clearr {
     clear: both;
 }
-.btn-close{
-    margin-left :0;
+
+.btn-close {
+    margin-left: 0;
 }
-.chbox{
+
+.chbox {
     position: absolute;
     top: 28%;
     left: 0%;
     transform: scale(2);
     float: left;
 }
+
 /*-----------------------------------------*/
-.inputs{
+.inputs {
     float: right;
     margin-right: 4%;
     margin-bottom: 1.5%;
 }
-.input1{
-    width: 55% !important;
-    border-radius: 7px;
-    color: rgb(92, 92, 92) !important;
-}
-.input2{
+
+.meetingtypedropdown{
     width: 55% !important;
     height: 38px !important;
     border-radius: 7px;
     color: rgb(92, 92, 92) !important;
 }
-.input3{
+
+.input1 {
+    width: 55% !important;
+    border-radius: 7px;
+    color: rgb(92, 92, 92) !important;
+}
+
+.input2 {
+    width: 55% !important;
+    height: 38px !important;
+    border-radius: 7px;
+    color: rgb(92, 92, 92) !important;
+}
+
+.input3 {
     width: 55% !important;
     height: 35px !important;
     border-radius: 7px;
@@ -243,37 +284,39 @@
     color: rgb(92, 92, 92) !important;
     padding: 2% !important;
 }
-.input6{
+
+.input6 {
     width: 90%;
     border-radius: 7px;
     height: 35px !important;
 }
 
-.input3::before{
+.input3::before {
     content: attr(data-placeholder);
-    position: absolute;   
-    background-color: white; 
+    position: absolute;
+    background-color: white;
 }
 
-.input3:hover::before{
-    content:"";
+.input3:hover::before {
+    content: "";
 }
 
 .input3:valid::before {
     display: none;
 }
 
-.selectAttBtn{
+.selectAttBtn {
     background-color: rgb(18, 29, 43) !important;
     color: rgba(255, 255, 255, 0.895) !important;
 }
 
-.selectAttBtn:hover{
+.selectAttBtn:hover {
     background-color: rgb(34, 96, 177) !important;
     color: rgba(255, 255, 255, 0.895) !important;
 }
+
 /*date picker*/
-.DATAPICKER{
+.DATAPICKER {
     float: right;
     margin-right: 4%;
     width: 55% !important;
@@ -284,8 +327,9 @@
     color: rgb(92, 92, 92) !important;
     padding: 10px !important;
 }
+
 /*Select Doc*/
-.selectDocBtn{
+.selectDocBtn {
     margin-right: 4%;
     float: right;
     width: 25%;
@@ -293,13 +337,13 @@
     color: rgba(255, 255, 255, 0.895) !important;
 }
 
-.selectDocBtn:hover{
+.selectDocBtn:hover {
     margin-right: 4%;
     background-color: rgb(34, 96, 177) !important;
     color: rgba(255, 255, 255, 0.895) !important;
 }
 
-.selectDocBtn1{
+.selectDocBtn1 {
     margin-right: 4.5%;
     float: right;
     width: 25%;
@@ -307,15 +351,15 @@
     color: rgba(255, 255, 255, 0.895) !important;
 }
 
-.selectDocBtn1:hover{
+.selectDocBtn1:hover {
     margin-right: 4.5%;
     background-color: rgb(18, 29, 43) !important;
     color: rgba(255, 255, 255, 0.895) !important;
 }
 
-.groupbox{
+.groupbox {
     position: relative;
-    height: fit-content ; 
+    height: fit-content;
     max-height: 43vh !important;
     background-color: white;
     width: 55% !important;
@@ -324,7 +368,7 @@
     height: 38px;
 }
 
-.chbox{
+.chbox {
     position: absolute;
     top: 40%;
     left: 7%;
@@ -333,73 +377,91 @@
 
 
 /*Done Button*/
-.selectDoneBtn{
+.selectDoneBtn {
     position: absolute !important;
     bottom: 0 !important;
     left: 0 !important;
     margin: 5% !important;
-    width: 12% ;
+    width: 12%;
     background-color: rgb(18, 29, 43) !important;
     color: rgba(255, 255, 255, 0.895) !important;
 }
-.selectDoneBtn:hover{
+
+.selectDoneBtn:hover {
     background-color: rgb(34, 96, 177) !important;
     color: rgba(255, 255, 255, 0.895) !important;
 }
 
 @media only screen and (max-width: 768px) {
+
     /* Adjustments for smaller screens */
-    .left, .right {
-    height: auto;
-    padding: 0;
-    margin: 0;
+    .left,
+    .right {
+        height: auto;
+        padding: 0;
+        margin: 0;
     }
-    
-    .left1, .left2, .left3 {
-    width: 100%;
-    height: auto;
-    margin: 3% 0;
+
+    .left1,
+    .left2,
+    .left3 {
+        width: 100%;
+        height: auto;
+        margin: 3% 0;
     }
-    
-    
-    
+
+
+
     .meetingDetails {
-    height: auto;
+        height: auto;
     }
-    
+
     .right1 {
-    width: 100%;
-    height: auto;
-    margin: 3% 0;
+        width: 100%;
+        height: auto;
+        margin: 3% 0;
     }
-    
-    .h2-1, .h3-1, .h3-2, .h3-3, .h2-2, .h2-3, .h2-4, .h2-5, .button1, .button2 {
-    font-size: 16px;
+
+    .h2-1,
+    .h3-1,
+    .h3-2,
+    .h3-3,
+    .h2-2,
+    .h2-3,
+    .h2-4,
+    .h2-5,
+    .button1,
+    .button2 {
+        font-size: 16px;
     }
-    
-    .row1, .row2 {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+    .row1,
+    .row2 {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    
-    .space1, .space2 {
-    margin: 0;
+
+    .space1,
+    .space2 {
+        margin: 0;
     }
-    
+
     .inputs {
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 3%;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 3%;
     }
-    
+
     .DATAPICKER {
-    margin-bottom: 8%;
+        margin-bottom: 8%;
     }
-    
-    .selectDocBtn, .selectAttBtn, .selectDoneBtn {
-    width: 100%;
-    margin: 3% 0;
+
+    .selectDocBtn,
+    .selectAttBtn,
+    .selectDoneBtn {
+        width: 100%;
+        margin: 3% 0;
     }
-    }
+}

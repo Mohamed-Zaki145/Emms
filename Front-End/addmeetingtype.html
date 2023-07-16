@@ -8,7 +8,7 @@
     <!--My Custom CSS Files-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="css/adminaddlocation.css">
+    <link rel="stylesheet" href="css/addmeetingtype.css">
     <!--Bootstrap 5-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--Font Awesome-->
@@ -18,7 +18,7 @@
     <title>اضافة مكان</title>
     <script>
         window.onload = function () {
-            getplaces();
+            getmeetings();
         };
     </script>
 </head>
@@ -73,27 +73,30 @@
                 
                 <div>
                     <br>
-                    <h4>إضافه مكان</h4>
+                    <h4>إضافه نوع اجتماع</h4>
                     <br>
-                    <input class="form-control inputform" type="text" placeholder="اسم المكان" aria-label="default input example" id="textinput">
-                    <button onclick="addplace()" type="button" class="btn btn-primary addbtn" data-bs-toggle="modal" data-bs-target="#exampleModal22">
+                    <input class="form-control inputform" type="text" placeholder="نوع الاجتماع" aria-label="default input example" id="textinput">
+                    <button onclick="addmeetingtype()" type="button" class="btn btn-primary addbtn" data-bs-toggle="modal" data-bs-target="#exampleModal22">
                         إضافه
                     </button>
 
                     <!---->
                     <br>
-                    <h4 class="h4-2">حذف مكان</h4>
+                    <h4 class="h4-2">حذف نوع اجتماع</h4>
                     <br>
                     <div class="card-body">
                         <form action="/action_page.php" class="" id="">
-                            <select onclick="fun()" class="input4" name="Location" id="Location2">
-                            <option value="Location1">قاعة السمينار</option>
-
+                            <select onclick="fun()" class="input4" name="type" id="meet">
+                                <option value="meeting1">مجلس الاقسام</option>
+                                <option value="meeting2">مجلس الكليه</option>
+                                <option value="meeting3">علوم البيئه</option>
+                                <option value="meeting4">شئون التعلبم و الطلاب</option>
+                                <option value="meeting5">البرامج الخاصه</option>
                             </select>
                         </form>
                     </div>
                     <button type="click" id="butt" class="button33" data-bs-toggle="modal" data-bs-target="#exampleModal7">
-                        حذف مكان
+                        حذف نوع اجتماع
                     </button>
 
                 </div>
@@ -117,7 +120,7 @@
 
     <!--JS Files-->
     <script src="js/logout.js"></script>
-    <script src="js/adminaddlocation.js"></script>
+    <script src="js/addmeetingtype.js"></script>
     <!-- <script src="js/controllercreatesub.js"></script> -->
     <script src="js/animation.js"></script>
     <script src="js/flipcard.js"></script>

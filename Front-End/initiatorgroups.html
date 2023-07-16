@@ -18,6 +18,7 @@
   <title>اضافة مجموعه</title>
   <script>
     window.onload = function () {
+      showinitiators();
       showdoctors();
     };
   </script>
@@ -35,7 +36,7 @@
       <ul class="icons fade-in">
         <a class="icon" href=""><i class="fa-solid fa-house"></i></a>
         <a class="icon" href="profile.html"><i class="fa-regular fa-user"></i></a>
-        <a  id="logout" onclick="logout()" class="btn logoutt">تسجيل الخروج</a>
+        <a id="logout" onclick="logout()" class="btn logoutt">تسجيل الخروج</a>
       </ul>
     </div>
     <br>
@@ -51,9 +52,12 @@
         </button>
         <div class="collapse navbar-collapse fade-in" id="navbarNavAltMarkup">
           <div class="navbar-nav mx-auto">
-            <a class="nav-link active" aria-current="page" href="admin.html">اضافة مستخدم</a>
-            <a class="nav-link active" aria-current="page" href="adminaddinvitees.html">اضافة اعضاء </a>
-            <a class="nav-link active" aria-current="page" href="adminaddlocation.html">اضافة مكان</a>
+            <a class="nav-link" href="admin.html">اضافة مستخدم</a>
+            <a class="nav-link" href="adddepartment.html">اضافة قسم</a>
+            <a class="nav-link" href="adminaddinvitees.html">اضافة اعضاء </a>
+            <a class="nav-link" href="adminaddlocation.html">اضافة مكان</a>
+            <a class="nav-link" href="addmeetingtype.html">اضافة نوع اجتماع</a>
+            <a class="nav-link" href="addsubject.html">اضافة نوع الموضوع</a>
             <a class="nav-link" href="initiatorgroups.html">اضافة مجموعه</a>
           </div>
         </div>
@@ -70,37 +74,46 @@
               <div class="container">
                 <br>
                 <h2 class="h2-5">اضافة مجموعه</h2>
+
+                <div>
+                  <h4 class="h4-0">اختر لمن المجموعه</h4>
+                  <form action="/action_page.php">
+                    <select  class="initiator" onclick="onselection()" id="init">
+                      <option value="">دكتور محمد نور الدين رئيس قسم نظم معلومات</option>
+                    </select>
+                  </form>
+                </div>
+                <br>
+
                 <h4 class="h4-1">اختر افراد المجموعه</h4>
 
                 <div class="formayainshallah"><br>
-                    <div class="container">
-                        <!-- <h3 class="h3-1">المستخدمين :</h3> -->
-                        <!-- <br>
-                        <hr> -->
-                        <div id="group">
-                            <div class="row">
-                                <div class="col-md-9">
-                                <div class="card border-0 h-100">
-                                    <div class="card-body"> 
-                                    <p class="card-text" style="text-align:right;">الاسم :</p>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="col-md-3">
-                                <div class="card border-0 h-100">
-                                    <div class="card-body">
-                                    <input class="chbox" type="checkbox" id="
-                                    " name="Doc1" value="Doc1">
-                                    </div>
-                                </div>
-                                </div>
+                  <div class="container">
+
+                    <div id="group">
+                      <div class="row">
+                        <div class="col-md-9">
+                          <div class="card border-0 h-100">
+                            <div class="card-body">
+                              <p class="card-text" style="text-align:right;">الاسم :</p>
                             </div>
-                            <hr> <!-- "<hr> لما تاخد السطور دى فى الجافا سكريبت جد السطر ده معاك" -->
+                          </div>
                         </div>
-                
+                        <div class="col-md-3">
+                          <div class="card border-0 h-100">
+                            <div class="card-body">
+                              <input class="chbox" type="checkbox" id="
+                                    " name="Doc1" value="Doc1">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr> <!-- "<hr> لما تاخد السطور دى فى الجافا سكريبت جد السطر ده معاك" -->
                     </div>
+
+                  </div>
                 </div>
-                
+
                 <div>
                   <button type="submit" onclick="checkedinvited()" class="btn selectdonebtn1">
                     اضف
@@ -148,7 +161,8 @@
                                 <div class="col-md-3">
                                   <div class="card border-0 h-100">
                                     <div class="card-body">
-                                      <button type="submit" onclick="deletemember()" id="deletemm" class="btn btn-danger " >
+                                      <button type="submit" onclick="deletemember()" id="deletemm"
+                                        class="btn btn-danger ">
                                         حذف
                                       </button>
                                     </div>
@@ -175,9 +189,9 @@
                   </button>
                 </div>
               </div>
-            
+
             </div>
-          
+
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ function update() {
         },
         body: JSON.stringify({
             "role":editvalue,
-            "adminstration": "نظم المعلومات"
+            // "adminstrationid": deptid
         }),
     }).then(response => {
         if (response.ok) {
